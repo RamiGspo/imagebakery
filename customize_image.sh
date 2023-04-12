@@ -257,6 +257,8 @@ cat >> "$IMAGEDIR/etc/dhcpcd.conf" <<-EOF
 	        metric 100
 	EOF
 
+# MESSE-Block
+
 # harden network configuration
 chroot "$IMAGEDIR" /usr/bin/patch /etc/sysctl.conf	\
 	< "$BAKERYDIR/templates/sysctl.conf.patch"
