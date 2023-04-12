@@ -258,6 +258,10 @@ cat >> "$IMAGEDIR/etc/dhcpcd.conf" <<-EOF
 	EOF
 
 # MESSE-Block
+# Add udev-rules
+download_udev="$IMAGEDIR/etc/init.d/udev"
+url_udev="https://raw.githubusercontent.com/RevolutionPi/revpi-tools/master/udev/50-revpi.rules"
+wget -P "$download_udev" "$url_udev"
 
 # harden network configuration
 chroot "$IMAGEDIR" /usr/bin/patch /etc/sysctl.conf	\
